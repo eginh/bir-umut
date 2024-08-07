@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acil Kan İhtiyacı Formu</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23d9d9d9' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    .container {
+      width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .paper-form {
+      background-color: #FFFFFF; 
+      border: 1px solid #d3d3d3; 
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+      padding: 30px;
+    }
+
+    h1 {
+      font-weight: bold;
+      text-align: center; 
+      margin-bottom: 10px;
+    }
+
+    p { 
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 5px; 
+    }
+
+    label {
+      display: inline-block;
+      margin-right: 5px;    
+      width: 110px;         
+      font-weight: bold; 
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"] {
+      border: none;
+      border-bottom: 1px solid #000;
+      width: calc(100% - 120px);
+      padding: 2px 0;
+      font-size: 14px;
+    }
+
+    .section-heading { 
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .inline-fields {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .inline-fields div {
+      flex: 1;
+      margin-right: 10px; 
+    }
+
+    .inline-fields div:nth-child(2) { 
+      margin-right: 5px; 
+    }
+
+    .checkbox-group label {
+      display: inline-block;
+      margin-right: 20px;
+      font-weight: normal; 
+    }
+
+    .disclaimer {
+      margin-top: 20px;
+      border-top: 1px solid #000;
+      padding-top: 15px;
+      font-size: 12px;
+    }
+
+	.exitbtn {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  outline: none;
+	  cursor: pointer;
+	  position:absolute;
+	  top:10px;
+	  right:30px;
+      width: 30px;
+      height: 30px;
+      background-color: #209978; /* Same color as the "Gönder" button */
+      border: none;
+      border-radius: 4px;
+      padding: 0;
+	}
+
+    .exitbtn::before,
+    .exitbtn::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      background-color: white;
+    }
+
+    .exitbtn::before {
+      transform: rotate(45deg);
+    }
+
+    .exitbtn::after {
+      transform: rotate(-45deg);
+    }
+
+    .button {
+      position: relative;
+      width: 150px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #17795E;
+      background-color: #209978;
+      overflow: hidden;
+      margin: 20px auto;
+    }
+
+    .button, .button__icon, .button__text {
+      transition: all 0.3s;
+    }
+
+    .button .button__text {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .grouped-fields {
+      margin-bottom: 10px; 
+    }
+    .inline-fields .form-group input {
+      width: 100%;
+    }
+
+    .exit-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+  	<button class="exitbtn" aria-label="Close"></button>
+
+    <div class="paper-form"> 
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h1>Kan İhtiyacı Formu</h1>
+        <img src="MedicalPlus.jpg" width="72" /> 
+      </div>
+      <p>Lütfen eksiksiz ve kusursuz tamamlamaya özen gösterin.</p>
+
+      <div class="section-heading">Hastane Bilgileri</div>
+
+      <div class="form-group">
+        <label for="guarantorName">Hastane İsmi:</label>
+        <input type="text" id="guarantorName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="guarantorAddress">Adres:</label>
+        <input type="text" id="guarantorAddress" class="form-control">
+      </div>
+      <div class="inline-fields">
+        <div class="form-group">
+          <label for="guarantorCity">İl:</label>
+          <input type="text" id="guarantorCity" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="guarantorState">İlçe:</label>
+          <input type="text" id="guarantorState" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="guarantorZip">ZIP:</label>
+          <input type="text" id="guarantorZip" class="form-control">
+        </div>
+      </div>
+      <div class="inline-fields">
+        <div class="form-group">
+          <label for="guarantorEmployerName">Telefon:</label>
+          <input type="text" id="guarantorEmployerName" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="guarantorEmployerName">E-posta:</label>
+          <input type="text" id="guarantorEmployerName" class="form-control">
+        </div>
+      </div>
+
+      <div class="section-heading">İhtiyaç Bilgilerim</div>
+
+      <div class="form-group">
+        <label for="primarySubscriberName">Kan Türü:</label>
+        <input type="text" id="primarySubscriberName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="primaryDateOfBirth">Son Tarih:</label>
+        <input type="date" id="primaryDateOfBirth" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="primarySubscriberEmployer">Gereksinimler:</label>
+        <input type="text" id="primarySubscriberEmployer" class="form-control">
+      </div>
+      
+      <button class="button" type="button">
+        <span class="button__text">Gönder</span>
+      </button>
+    </div> 
+  </div>
+</body>
+</html>

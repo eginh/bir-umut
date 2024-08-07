@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donör Paneli - Ayarlar</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #f4f5f7;
+        }
+
+        .sidebar {
+            background-color: #fff;
+            height: 100vh;
+            width: 250px;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: width 0.3s ease;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar-header .plus-symbol {
+            display: inline-block;
+            width: 4rem; 
+            height: 4rem; 
+            background-color: #dc3545; 
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .sidebar-header .plus-symbol::before,
+        .sidebar-header .plus-symbol::after {
+            content: '';
+            position: absolute;
+            background-color: white; 
+        }
+
+        .sidebar-header .plus-symbol::before {
+            width: 50%;
+            height: 10%;
+            top: 45%;
+            left: 25%;
+        }
+
+        .sidebar-header .plus-symbol::after {
+            width: 10%;
+            height: 50%;
+            left: 45%;
+            top: 25%;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-nav li a {
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar-nav li a i {
+            margin-right: 10px; 
+        }
+
+        .sidebar-nav li a:hover {
+            background-color: #e9ecef;
+        }
+
+        .sidebar-nav li a.active {
+            background-color: #e2e6ea;
+            font-weight: 600;
+        }
+
+        .main-content {
+            padding: 20px;
+            margin-left: 250px;
+            transition: margin-left 0.3s ease;
+            background-color: #fff0;
+            border-radius: 10px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-header h1 {
+            color: #333;
+            font-weight: 600;
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .settings-section {
+            margin-bottom: 30px;
+        }
+
+        .settings-section h2 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+        }
+
+        .form-control {
+            border-radius: 2px;
+        }
+
+        .save-button {
+            background-color: #28a745;
+            background-position: absolute;
+            top:100px;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E8EEF7;
+            margin: 0;
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        .patient-profile {
+            max-width: 950px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 0px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .profile-header {
+            background-color: #4FC3C3;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-header h2 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .profile-card,
+        .overview-card,
+        .account-settings,
+        .notification-settings {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #D8EDED;
+        }
+
+        .profile-card label.upload-image {
+            display: block;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .profile-card img.patient-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 3px solid #4FC3C3;
+            border-radius: 50%;
+        }
+
+        .profile-card h3,
+        .overview-card h3,
+        .account-settings h3,
+        .notification-settings h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .contact-details p {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: #4FC3C3;
+            font-size: 16px;
+        }
+
+        .overview-details .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .three-dots {
+            display: none;
+        }
+
+        .account-settings label,
+        .notification-settings label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .account-settings input,
+        .notification-settings input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .notification-settings input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            accent-color: #4FC3C3;
+            /* Modern checkbox styles */
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 18px;
+            width: 18px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .notification-settings input[type="checkbox"]:checked {
+            background-color: #4FC3C3;
+            border-color: #4FC3C3;
+        }
+
+        .notification-settings input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+        .notification-settings label {
+            margin-left: 20px;
+        }
+
+        .profile-content > div {
+            margin-bottom: 20px;
+        }
+
+        .profile-card,
+        .overview-card {
+            margin-bottom: 20px;
+        }
+
+		.save-button-container { 
+		    text-align: center;
+		    margin-top: 30px;
+		}
+
+		.save-button-container button {
+		    background-color: #4FC3C3;
+		    position:relative;
+		    top:-40px;
+		    left:-20px;
+		    color: white;
+		    padding: 10px 20px;
+		    border: none;
+		    border-radius: 5px;
+		    cursor: pointer;
+		    font-size: 16px;
+		    font-weight: 500;
+		}
+
+        .save-button-container button:hover {
+            background-color: #369c9c;
+        }
+
+        .contact-details .fa-phone {
+            margin-right: 10px;
+        }
+
+        .contact-details .fa-mobile-alt {
+            margin-right: 10px;
+        }
+
+        .contact-details .fa-envelope {
+            margin-right: 10px;
+        }
+
+        .contact-details .fa-map-marker-alt {
+            margin-right: 10px;
+        }
+
+        .profile-card input[type="file"] {
+            display: none;
+        }
+
+        .radio-container {
+            margin-bottom: 10px;
+            margin-left: -20px;
+        }
+
+        .radio-container input[type="radio"] {
+            display: none;
+        }
+
+        .radio-container label {
+            display: inline-block;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            line-height: 20px;
+            font-size: 14px;
+        }
+
+        .radio-container label::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .radio-container input[type="radio"]:checked + label::before {
+            background-color: #4FC3C3;
+            border: none;
+        }
+
+        .radio-container input[type="radio"]:checked + label::after {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="plus-symbol"></div> 
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#"><i class="fas fa-list-ul"></i>Tüm Aramalar</a></li>
+            <li><a href="#" class="active"><i class="fas fa-cog"></i> Ayarlar</a></li>
+            <li><a href="#"><i class="fas fa-sign-out-alt"></i>Çıkış Yap</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="patient-profile">
+            <div class="profile-header">
+                <h2>Profilim</h2>
+            </div>
+
+            <div class="profile-content">
+                <div>
+                    <div class="profile-card">
+                        <label for="profile_picture" class="upload-image">
+                            <img src="patient-image.jpg" class="patient-image">
+                        </label>
+                        <input type="file" id="profile_picture" name="profile_picture" accept="image/*">
+                        <h3>İletişim Bilgileri</h3>
+                        <div class="contact-details">
+                            <p><i class="fas fa-phone"></i>-</p>
+                            <p><i class="fas fa-mobile-alt"></i>-</p>
+                            <p><i class="fas fa-envelope"></i>-</p>
+                            <p><i class="fas fa-map-marker-alt"></i>-</p>
+                        </div>
+                    </div>
+
+                    <div class="notification-settings">
+                        <h3>Bildirim Ayarları</h3>
+                        <form>
+                            <div class="radio-container">
+                                <input type="radio" id="no_email" name="email_option" checked>
+                                <label for="no_email">SMS/E-posta Bildirimi Üzerinden</label>
+                            </div>
+                            <div class="radio-container">
+                                <input type="radio" id="email_copy" name="email_option">
+                                <label for="email_copy">Sadece Web Üzerinden</label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="overview-card">
+                        <h3>Genel Bilgilerim</h3>
+                        <div class="overview-details">
+                            <div class="detail-row">
+                                <span class="label">Adı Soyadı:</span>
+                                <span class="value">Kutasov</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Kan Grubu:</span>
+                                <span class="value">A</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Rh Faktörü:</span>
+                                <span class="value">+</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Kayıt Tarihi:</span>
+                                <span class="value">25/06/2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="account-settings">
+                        <h3>Hesap Ayarları</h3>
+                        <form>
+                            <label for="current_password">Mevcut Şifre:</label>
+                            <input type="password" id="current_password" name="current_password"><br>
+
+                            <label for="new_password">Yeni Şifre:</label>
+                            <input type="password" id="new_password" name="new_password"><br>
+
+                            <label for="confirm_password">Şifreyi Doğrula:</label>
+                            <input type="password" id="confirm_password" name="confirm_password"><br>
+
+                            <label for="phone">Telefon Numarası:</label>
+                            <input type="tel" id="phone" name="phone" value="">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="save-button-container">
+                <button type="submit">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        const profilePictureInput = document.getElementById('profile_picture');
+        const profilePictureImage = document.querySelector('.profile-card img.patient-image');
+
+        profilePictureInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                profilePictureImage.src = e.target.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

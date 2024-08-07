@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Work+Sans:wght@400;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .navbar-nav .nav-link {
+            font-family: 'Work Sans', 'ui-sans-serif';
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        .hero-text {
+            padding: 30px;
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #8B0000;
+            font-family: 'DM Serif Display', ui-serif, Georgia, Cambria, "Times New Roman", serif;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        .hero-text .btn-custom {
+            font-size: 0.875rem;
+            padding: 6px 12px;
+            background-color: #8B0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600; 
+            text-transform: none; 
+        }
+
+        .form-container {
+        	position:relative;
+        	top:-44px;
+            width: 500px;
+            margin: 20px auto;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-header {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .close-btn {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .form-content {
+            padding: 20px;
+        }
+        .donor-details-container {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .donor-details {
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background-color: white;
+            padding: 0 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        form {
+            border: 1px solid #ccc;
+            padding: 20px 15px 15px;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        label {
+            width: 150px;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        input, select {
+            flex-grow: 1;
+            padding: 3px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>') no-repeat right 5px center;
+            background-size: 20px;
+            padding-right: 25px;
+        }
+        .required::after {
+            content: " *";
+            color: red;
+        }
+        .password-hint {
+            font-size: 12px;
+            color: #666;
+            margin-left: 160px;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-left: 150px;
+        }
+        .checkbox-label input {
+            width: auto;
+            margin-right: 5px;
+        }
+        .submit-btn {
+            background-color: #8B0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="MedicalPlus.jpg">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nasıl Çalışır?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Donör Girişi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Personel Girişi</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 hero-text">
+                    <h1>Kan Bağışı Yapmak İçin Geç Değil</h1>
+                    <p class="lead">Buraya giriş yazımız gelecek.</p>
+                </div>
+                <div class="col-lg-6">
+
+                    <div class="form-container">
+                        <div class="form-header">
+                            Donör Kayıt Formu
+                            <span class="close-btn">×</span>
+                        </div>
+                        <div class="form-content">
+                            <div class="donor-details-container">
+                                <form>
+                                    <div class="donor-details">DONÖR BİLGİLERİ</div>
+                                    <div class="form-row">
+                                        <label for="fullName" class="required">Adı Soyadı:</label>
+                                        <input type="text" id="fullName" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <label for="type" class="required">Rh Faktörü:</label>
+                                        <select id="type" required>
+                                            <option value="">Seçim Yap</option>
+                                            <option value="+">+</option>
+                                            <option value="-">-</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <label for="bloodGroup" class="required">Kan Grubu:</label>
+                                        <select id="bloodGroup" required>
+                                            <option value="">Seçim Yap</option>
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="0+">0+</option>
+                                            <option value="0-">0-</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <label for="state" class="required">İl:</label>
+                                        <select id="state" required>
+                                            <option value="">Seçim Yap</option>
+                                            </select>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <label for="city" class="required">İlçe:</label>
+                                        <input type="text" id="city" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <label for="mobile" class="required">Telefon Numarası:</label>
+                                        <input type="tel" id="mobile" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <label for="email" class="required">E-posta:</label>
+                                        <input type="email" id="email" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <label for="password" class="required">Şifre:</label>
+                                        <input type="password" id="password" required>
+                                    </div>
+                                    <div class="password-hint">(en az 8 karakter içermeli)</div>
+                                    
+                                    <div class="form-row">
+                                        <label for="confirmPassword" class="required">Şifreyi Doğrula:</label>
+                                        <input type="password" id="confirmPassword" required>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <label for="lastDonated">Kan Bağışı Geçmişi:</label>
+                                        <select id="lastDonated">
+                                            <option value="negative">Hiç Bağışlamadım</option>
+                                             <option value="positive">Daha Önce Bağışladım</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <input type="submit" value="Gönder" class="submit-btn">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
