@@ -50,6 +50,10 @@ We welcome contributions from developers, designers, and healthcare professional
 - Enhance frontend features based on backend capabilities
 - Implement secure data handling and privacy measures
 
+## Contact
+
+You can contact me at birumutproject@gmail.com
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE.md).
