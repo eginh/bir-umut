@@ -1,7 +1,7 @@
 
 ## About Project "Bir Umut"
 
-BloodLink is an innovative open-source project designed to revolutionize how hospitals manage urgent blood donation requests. Our mission is to connect hospitals with the most suitable blood donors in real-time, potentially saving countless lives.
+Bir Umut is an innovative open-source project designed to revolutionize how hospitals manage urgent blood donation requests. Our mission is to connect hospitals with the most suitable blood donors in real-time, potentially saving countless lives.
 
 ## Project Goals
 
