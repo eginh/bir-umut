@@ -52,7 +52,7 @@ We welcome contributions from developers, designers, and healthcare professional
 
 ## Contact
 
-You can contact me at birumutproject@gmail.com
+You can contact us at birumutproject@gmail.com
 
 ## License
 
