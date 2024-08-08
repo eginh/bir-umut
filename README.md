@@ -10,6 +10,7 @@ Bir Umut is an innovative open-source project designed to revolutionize how hosp
   - Mode of transportation
   - Availability
   - Estimated arrival time
+  - Gauge of their responsiveness
   - Other relevant parameters
 - Enhance the existing user interface for both hospitals and donors
 - Ensure data privacy and security throughout the process
