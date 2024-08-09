@@ -12,7 +12,7 @@ Bir Umut is an innovative open-source project designed to revolutionize how hosp
   - Estimated arrival time
   - Gauge of their responsiveness
   - Other relevant parameters
-We employ adaptive weighting: The weights of criteria are dynamically dependent on real-time data and changing conditions. For instance, if traffic is congested, we increase the weight of proximity over transportation mode.
+  - We employ adaptive weighting: The weights of criteria are dynamically dependent on real-time data and changing conditions. For instance, if traffic is congested, we increase the weight of proximity over transportation mode.
 - Enhance the existing user interface for both hospitals and donors
 - Ensure data privacy and security throughout the process
 
